@@ -19,3 +19,11 @@
 In this system, after registering the entry and exit of a person by his fingerprint, the information including date, name, time of arrival, time of departure and working hours for the employee are stored on the SD card. Then this information will be sent to ThingSpeak at the time you have specified. In the absence of the Internet connection, unpublished data is stored and will be forwarded to ThingSpeak as soon as it is connected to the Internet. Since the information is stored in the EEPROM of the microcontroller, they will not be lost in case of a power outage.
 
 This code is written for 11 people with default names, but you can change them and remove it from the default mode. To register a new name, simply connect the device to your computer and press the key to enter the register mode, then open the Serial Monitor and follow the registration process as is shown on the Serial Monitor.
+
+NodeMCU executes the task of uploading the information in this system. It takes the uploading information from Arduino through the serial port and returns the status of uploading to Arduino.
+
+First, change the Channel ID and Write API Key according to your ThingSpeak Panel.
+
+The String_Analuze (); function in this code divides the NodeMCU input strings into the date, name, arrival and departure time, and working hours, and sends this information to ThingSpeak. Then if the uploading process is successful, it sends the character “1”, and otherwise it sends the character “0” to the Arduino.
+
+

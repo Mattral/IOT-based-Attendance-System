@@ -22,6 +22,7 @@ This code is written for 11 people with default names, but you can change them a
 
 NodeMCU executes the task of uploading the information in this system. It takes the uploading information from Arduino through the serial port and returns the status of uploading to Arduino.
 
+
 First, change the Channel ID and Write API Key according to your ThingSpeak Panel.
 
 The String_Analuze (); function in this code divides the NodeMCU input strings into the date, name, arrival and departure time, and working hours, and sends this information to ThingSpeak. Then if the uploading process is successful, it sends the character “1”, and otherwise it sends the character “0” to the Arduino.
